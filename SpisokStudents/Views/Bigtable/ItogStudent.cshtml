@@ -1,0 +1,37 @@
+﻿@model IEnumerable<SpisokStudents.Models.Summa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Сумма баллов студентов</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameStudent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SummaRating)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameStudent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SummaRating)
+                </td>
+            </tr>
+        }
+    </tbody>
+    <div class="form-group">
+        <a asp-action="ExportToCsv"> Сохранить файл</a>
+    </div>
+</table>
